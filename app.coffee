@@ -1,7 +1,7 @@
 express = require 'express'
 mongoose = require 'mongoose'
 
-mongoose.connect 'mongodb://localhost/todone'
+mongoose.connect process.env.MONGOLAB_URI ? 'mongodb://localhost/todone'
 
 Todo = mongoose.model 'Todo', new mongoose.Schema
   content: String
