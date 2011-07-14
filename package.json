@@ -1,0 +1,9 @@
+{
+  "name": "node-backbone-mongo-showcase",
+  "version": "0.1.1",
+  "dependencies": {
+    "express": "2.4.2",
+    "mongoose": "1.6.0",
+    "coffeekup": "0.2.3"
+  }
+}
