@@ -1,7 +1,7 @@
 express = require 'express'
 mongoose = require 'mongoose'
 
-mongoose.connect process.env.MONGOLAB_URI ? 'mongodb://localhost/todone'
+mongoose.connect process.env.MONGOLAB_URI || 'mongodb://localhost/todone'
 
 Todo = mongoose.model 'Todo', new mongoose.Schema
   content: String
@@ -44,4 +44,4 @@ app.del '/todos/:id', (req, res) ->
     todo.remove (err) ->
       console.log("removed") unless err
   
-app.listen process.env.PORT ? 3000
+app.listen process.env.PORT || 3000

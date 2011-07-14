@@ -1,8 +1,8 @@
 (function() {
-  var Todo, app, express, mongoose, _ref, _ref2;
+  var Todo, app, express, mongoose;
   express = require('express');
   mongoose = require('mongoose');
-  mongoose.connect((_ref = process.env.MONGOLAB_URI) != null ? _ref : 'mongodb://localhost/todone');
+  mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/todone');
   Todo = mongoose.model('Todo', new mongoose.Schema({
     content: String,
     done: Boolean
@@ -60,5 +60,5 @@
       });
     });
   });
-  app.listen((_ref2 = process.env.PORT) != null ? _ref2 : 3000);
+  app.listen(process.env.PORT || 3000);
 }).call(this);
