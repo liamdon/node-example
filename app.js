@@ -10,6 +10,7 @@
   app = express.createServer();
   app.register('.coffee', require('coffeekup'));
   app.set('view engine', 'coffee');
+  app.set('views', __dirname + '/views');
   app.set('view options', {
     layout: false
   });
